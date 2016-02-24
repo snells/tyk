@@ -1,0 +1,27 @@
+.view-container {
+}
+
+.view-box {
+}
+.max-size {
+}
+
+
+
+.borderless {
+
+    -fx-background-color: -fx-control-inner-background;
+}
+
+.borderless .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.borderless .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.borderless .scroll-pane .content{
+    -fx-background-color: transparent;
+}

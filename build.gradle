@@ -1,0 +1,43 @@
+buildscript {
+
+    repositories {
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'org.javafxports:jfxmobile-plugin:1.0.7'
+    }
+}
+apply plugin: 'org.javafxports.jfxmobile'
+
+apply plugin: 'java'
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {
+            url 'http://nexus.gluonhq.com/nexus/content/repositories/releases/'
+        }
+    }
+
+
+apply plugin: 'java'
+    dependencies {
+        compile 'org.jsoup:jsoup:1.8.3'
+        compile "com.gluonhq:charm-down-common:1.0.0"
+        desktopRuntime "com.gluonhq:charm-down-desktop:1.0.0"
+        androidRuntime "com.gluonhq:charm-down-android:1.0.0"
+        iosRuntime "com.gluonhq:charm-down-ios:1.0.0"
+}
+
+mainClassName = 's.s.Main'
+
+jfxmobile {
+    android {
+        applicationPackage = 'org.javafxports.ensemble'
+        manifest = 'src/android/AndroidManifest.xml'
+        androidSdk = '/ss/android/Sdk'
+    }
+    ios {
+        infoPList = file('src/ios/Default-Info.plist')
+    }
+}
